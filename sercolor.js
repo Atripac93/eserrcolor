@@ -139,5 +139,41 @@ const trovaJob = function (title, location){
 console.log(trovaJob("dev", "US"));
 
 //2//
+function searchJob() {
+  // Recupera i valori dai campi di input
+  var locationInput = document.getElementById("location").value;
+  var jobTitleInput = document.getElementById("jobTitle").value;
+
+  // Chiamata alla funzione di elaborazione (sostituisci con la tua funzione)
+  var results = processJobSearch(locationInput, jobTitleInput);
+
+  // Ottieni l'elemento della lista risultati
+  var resultsList = document.getElementById("resultsList");
+
+  // Pulisci la lista dei risultati precedenti
+  resultsList.innerHTML = "";
+
+  // Mostra i nuovi risultati nella lista
+  for (var i = 0; i < results.length; i++) {
+      var li = document.createElement("li");
+      li.textContent = results[i];
+      resultsList.appendChild(li);
+  }
+}
+
+// Funzione di elaborazione (da implementare)
+function processJobSearch(location, jobTitle) {
+  // Esempio di elaborazione: restituisci un array di risultati fittizi
+  return [
+      "Risultato 1 per " + jobTitle + " a " + location,
+      "Risultato 2 per " + jobTitle + " a " + location,
+      "Risultato 3 per " + jobTitle + " a " + location
+  ];
+}
+
+// Aggiungi un gestore di eventi al pulsante di ricerca
+var searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", searchJob);
+  
 
   
