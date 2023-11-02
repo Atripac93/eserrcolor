@@ -122,7 +122,7 @@ const jobs = [
       location: "US, NY, Saint Bonaventure",
     },
   ];
-
+//1//
 const trovaJob = function (title, location){
     let trovaJobs = [];
     for(i = 0; i< jobs.length; i++){
@@ -137,4 +137,7 @@ const trovaJob = function (title, location){
 };
 
 console.log(trovaJob("dev", "US"));
+
+//2//
+
   
