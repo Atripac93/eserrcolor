@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./document.css">
 </head>
 <body>
-    <h1>Ricerca Lavoro</h1>
+    <h1 class="tit">Ricerca Lavoro</h1>
     
-    <h3 class="location">Location</h3>
-    <input type="text" id="location">
+    <h3 id="location">Location:</h3>
+    <input onchange="mostraPo()" type="text" id="location">
     
     <h3 class="jobTitle">Titolo Lavorativo:</h3>
-    <input type="text" id="jobTitle">
+    <input onchange="mostraPo()" type="text" id="jobTitle">
     
-    <button id="searchButton" value="cerca">Cerca</button>
+    <button onclick="mostraPo()" id="searchButton">Cerca</button>
     <div>
-    <ul id="resultsList">
+    <ul id="List">
         
     </ul>
     </div>
+
+
 
     
     <script src="sercolor.js"></script>
