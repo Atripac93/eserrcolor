@@ -1,0 +1,10 @@
+body{
+    background-color: violet;
+}
+.tit{
+    color: red;
+}
+button{
+    border-radius: 20px;
+    padding: 10px;
+}
