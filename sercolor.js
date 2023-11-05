@@ -136,8 +136,7 @@ const trovaJob = function (title, location){
     return {risultato: trovaJobs, conto: trovaJobs.length};
 };
 
-console.log(trovaJob("dev", "US"))
-
+/*console.log(trovaJob("dev", "US"))*/
 //2//
 //controllo prima se ho collegato bene la funzione con i diversi input ed i diversi eventi in maniera preliminare//
  /*const mostraValue = function(){
@@ -145,27 +144,20 @@ console.log(trovaJob("dev", "US"))
   for(let  i = 0; i<inputs.length; i++)
   console.log(inputs[i].value)
  }*/
-
+ let position = document.querySelector("#location")
+ let lavoro = document.querySelector("#jobTitle")
   //qui faccio la funzione vera e propria coi due valori che mi servono//
 const mostraPo = function(){
-  let position = document.querySelector("#location")
-  let lavoro = document.querySelector("#jobTitle")
-  const oggettoTrovato = trovaJob(position.value,lavoro.value)
-  let lista = document.querySelector("#List")
+  
+  if(!position.value || !lavoro.value){
+     alert("Devi inserire entrambi i valori")
+  }else{
+  const oggettoTrovato = trovaJob(lavoro.value,position.value)
+  let lista = document.querySelector("#list")
   for(let i= 0; i<oggettoTrovato.conto; i++){
-    lista.innerHTML+="<li>oggettoTrovato.risultato[i].title && oggettoTrovato.risultato[i].location</li>"
-
+    lista.innerHTML+= "<li>" + oggettoTrovato.risultato[i].title +  oggettoTrovato.risultato[i].location + "</li>"
   }
-}
-
-const attenzione = function(){
-  const po = document.querySelector("#location")
-  const jp = document.querySelector("jobTitle")
-  const finale= trovaJob(title,location)
-  if(finale.lenght >0){
-    console.log("Ecco i valori"+ finale);
-    else{
-      console.log("Nulla");
-    }
   }
+  /*position.value ="";
+  lavoro.value="";*/
 }
